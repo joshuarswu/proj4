@@ -20,6 +20,8 @@ public class ProductTypeController {
 
     /**
     * 保存和修改公用的
+    * @param productType  传递的实体
+    * @return Ajaxresult转换结果
     */
     @RequestMapping(value="/add",method= RequestMethod.POST)
     public AjaxResult save(@RequestBody ProductType productType){
@@ -38,6 +40,8 @@ public class ProductTypeController {
 
     /**
     * 删除对象信息
+    * @param id
+    * @return
     */
     @RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
     public AjaxResult delete(@PathVariable("id") Integer id){
@@ -60,6 +64,7 @@ public class ProductTypeController {
 
     /**
     * 加载类型树的数据
+    * @return
     */
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public List<ProductType> list(){
@@ -70,6 +75,9 @@ public class ProductTypeController {
 
     /**
     * 分页查询数据
+    *
+    * @param query 查询对象
+    * @return PageList 分页对象
     */
     @RequestMapping(value = "/json",method = RequestMethod.POST)
     public PageList<ProductType> json(@RequestBody ProductTypeQuery query)
@@ -77,4 +85,21 @@ public class ProductTypeController {
         IPage<ProductType> page = productTypeService.page(new Page<ProductType>(query.getPageNum(),query.getPageSize()));
         return new PageList<>(page.getTotal(),page.getRecords());
     }
+
+    /**
+     * 生成主页面
+     * @return
+     */
+    @GetMapping("/genHomePage")
+    public AjaxResult genHomePage(){
+        try {
+            productTypeService.genHomePage();
+            return AjaxResult.me().setSuccess(true).setMessage("成功！");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return AjaxResult.me().setSuccess(false).setMessage("失败！"+e.getMessage());
+        }
+    }
+
+
 }

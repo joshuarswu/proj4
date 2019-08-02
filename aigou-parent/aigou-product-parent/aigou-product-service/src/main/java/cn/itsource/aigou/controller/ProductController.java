@@ -20,6 +20,8 @@ public class ProductController {
 
     /**
     * 保存和修改公用的
+    * @param product  传递的实体
+    * @return Ajaxresult转换结果
     */
     @RequestMapping(value="/add",method= RequestMethod.POST)
     public AjaxResult save(@RequestBody Product product){
@@ -38,6 +40,8 @@ public class ProductController {
 
     /**
     * 删除对象信息
+    * @param id
+    * @return
     */
     @RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
     public AjaxResult delete(@PathVariable("id") Integer id){
@@ -59,6 +63,8 @@ public class ProductController {
 
 
     /**
+    * 查看所有的员工信息
+    * @return
     */
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public List<Product> list(){
@@ -69,6 +75,9 @@ public class ProductController {
 
     /**
     * 分页查询数据
+    *
+    * @param query 查询对象
+    * @return PageList 分页对象
     */
     @RequestMapping(value = "/json",method = RequestMethod.POST)
     public PageList<Product> json(@RequestBody ProductQuery query)

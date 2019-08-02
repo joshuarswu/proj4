@@ -32,7 +32,7 @@ public class BrandServiceImpl extends ServiceImpl<BrandMapper, Brand> implements
         //查询当前页的数据
         Page<Brand> page = new Page<>(query.getPageNum(),query.getPageSize());
         IPage<Brand> ip = baseMapper.queryPage(page, query);
-        //封装到PageList
+        //封装到PageList返回
         return new PageList<>(ip.getTotal(),ip.getRecords());
     }
 

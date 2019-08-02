@@ -9,6 +9,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * <p>
+ * 商品目录
+ * </p>
+ *
+ * @author solargen
+ * @since 2019-07-30
+ */
 @TableName("t_product_type")
 public class ProductType extends Model<ProductType> {
 
@@ -23,22 +31,49 @@ public class ProductType extends Model<ProductType> {
     @TableField("updateTime")
     private Long updateTime;
 
+    /**
+     * 类型名
+     */
     private String name;
+
+    /**
+     * 父ID
+     */
     private Long pid;
+
+    /**
+     * 图标
+     */
     private String logo;
+
+    /**
+     * 描述
+     */
     private String description;
 
     @TableField("sortIndex")
     private Integer sortIndex;
 
+    /**
+     * 路径
+     */
     private String path;
 
+    /**
+     * 商品数量
+     */
     @TableField("totalCount")
     private Integer totalCount;
 
+    /**
+     * 分类标题（SEO）
+     */
     @TableField("seoTitle")
     private String seoTitle;
 
+    /**
+     * 分类关键字（SEO）
+     */
     @TableField("seoKeywords")
     private String seoKeywords;
 
