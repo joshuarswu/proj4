@@ -838,28 +838,44 @@
       <Comment>商品</Comment>
       <Engine>InnoDB</Engine>
     </table>
-    <table id="213" parent="3" name="t_product_type">
+    <table id="213" parent="3" name="t_product_ext">
+      <Comment>商品扩展</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="214" parent="3" name="t_product_type">
       <Comment>商品目录</Comment>
       <Engine>InnoDB</Engine>
     </table>
-    <column id="214" parent="211" name="id">
+    <table id="215" parent="3" name="t_sku">
+      <Comment>SKU</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="216" parent="3" name="t_specification">
+      <Comment>商品属性</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="217" parent="3" name="t_specification_option">
+      <Comment>商品选项</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="218" parent="211" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="215" parent="211" name="createTime">
+    <column id="219" parent="211" name="createTime">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="216" parent="211" name="updateTime">
+    <column id="220" parent="211" name="updateTime">
       <Position>3</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="217" parent="211" name="name">
+    <column id="221" parent="211" name="name">
       <Position>4</Position>
       <Comment>用户姓名</Comment>
       <DataType>varchar(20)|0</DataType>
@@ -867,200 +883,235 @@
       <DefaultExpression>&apos;匿名&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="218" parent="211" name="englishName">
+    <column id="222" parent="211" name="englishName">
       <Position>5</Position>
       <Comment>英文名</Comment>
       <DataType>varchar(30)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="219" parent="211" name="firstLetter">
+    <column id="223" parent="211" name="firstLetter">
       <Position>6</Position>
       <Comment>首字母</Comment>
       <DataType>char(1)|0</DataType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="220" parent="211" name="description">
+    <column id="224" parent="211" name="description">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="221" parent="211" name="product_type_id">
+    <column id="225" parent="211" name="product_type_id">
       <Position>8</Position>
       <Comment>商品分类ID</Comment>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="222" parent="211" name="sortIndex">
+    <column id="226" parent="211" name="sortIndex">
       <Position>9</Position>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;100&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="223" parent="211" name="logo">
+    <column id="227" parent="211" name="logo">
       <Position>10</Position>
       <Comment>品牌LOGO</Comment>
       <DataType>varchar(150)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="224" parent="211" name="PRIMARY">
+    <key id="228" parent="211" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="225" parent="212" name="id">
+    <column id="229" parent="212" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="226" parent="212" name="createTime">
+    <column id="230" parent="212" name="createTime">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="227" parent="212" name="updateTime">
+    <column id="231" parent="212" name="updateTime">
       <Position>3</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="228" parent="212" name="name">
+    <column id="232" parent="212" name="name">
       <Position>4</Position>
       <Comment>商品名称</Comment>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="229" parent="212" name="subName">
+    <column id="233" parent="212" name="subName">
       <Position>5</Position>
       <Comment>副名称</Comment>
       <DataType>varchar(100)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="230" parent="212" name="code">
+    <column id="234" parent="212" name="code">
       <Position>6</Position>
       <Comment>商品编码</Comment>
       <DataType>char(10)|0</DataType>
       <DefaultExpression>&apos;100&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="231" parent="212" name="product_type_id">
+    <column id="235" parent="212" name="product_type_id">
       <Position>7</Position>
       <Comment>商品类型ID</Comment>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="232" parent="212" name="onSaleTime">
+    <column id="236" parent="212" name="onSaleTime">
       <Position>8</Position>
       <Comment>上架时间</Comment>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="212" name="offSaleTime">
+    <column id="237" parent="212" name="offSaleTime">
       <Position>9</Position>
       <Comment>下架时间</Comment>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="212" name="brand_id">
+    <column id="238" parent="212" name="brand_id">
       <Position>10</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="212" name="state">
+    <column id="239" parent="212" name="state">
       <Position>11</Position>
       <Comment>状态</Comment>
       <DataType>tinyint(4)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="236" parent="212" name="maxPrice">
+    <column id="240" parent="212" name="maxPrice">
       <Position>12</Position>
       <Comment>最高价</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="237" parent="212" name="minPrice">
+    <column id="241" parent="212" name="minPrice">
       <Position>13</Position>
       <Comment>最低价</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="212" name="saleCount">
+    <column id="242" parent="212" name="saleCount">
       <Position>14</Position>
       <Comment>销量</Comment>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="212" name="viewCount">
+    <column id="243" parent="212" name="viewCount">
       <Position>15</Position>
       <Comment>浏览量</Comment>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="212" name="commentCount">
+    <column id="244" parent="212" name="commentCount">
       <Position>16</Position>
       <Comment>评论数</Comment>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="212" name="commentScore">
+    <column id="245" parent="212" name="commentScore">
       <Position>17</Position>
       <Comment>评分</Comment>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="212" name="viewProperties">
+    <column id="246" parent="212" name="goodCommentCount">
       <Position>18</Position>
-      <Comment>显示属性摘要</Comment>
-      <DataType>varchar(500)|0</DataType>
+      <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="212" name="goodCommentCount">
+    <column id="247" parent="212" name="commonCommentCount">
       <Position>19</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="212" name="commonCommentCount">
+    <column id="248" parent="212" name="badCommentCount">
       <Position>20</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="212" name="badCommentCount">
-      <Position>21</Position>
-      <DataType>int(11)|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="246" parent="212" name="PRIMARY">
+    <key id="249" parent="212" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="247" parent="213" name="id">
+    <column id="250" parent="213" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="213" name="createTime">
+    <column id="251" parent="213" name="description">
+      <Position>2</Position>
+      <Comment>简介</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="252" parent="213" name="richContent">
+      <Position>3</Position>
+      <Comment>图文内容</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="253" parent="213" name="productId">
+      <Position>4</Position>
+      <Comment>商品ID</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="254" parent="213" name="viewProperties">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="255" parent="213" name="skuProperties">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="256" parent="213" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="257" parent="214" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="258" parent="214" name="createTime">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="213" name="updateTime">
+    <column id="259" parent="214" name="updateTime">
       <Position>3</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="213" name="name">
+    <column id="260" parent="214" name="name">
       <Position>4</Position>
       <Comment>类型名</Comment>
       <DataType>varchar(50)|0</DataType>
@@ -1068,61 +1119,230 @@
       <DefaultExpression>&apos;匿名&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="213" name="pid">
+    <column id="261" parent="214" name="pid">
       <Position>5</Position>
       <Comment>父ID</Comment>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="213" name="logo">
+    <column id="262" parent="214" name="logo">
       <Position>6</Position>
       <Comment>图标</Comment>
       <DataType>varchar(150)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="213" name="description">
+    <column id="263" parent="214" name="description">
       <Position>7</Position>
       <Comment>描述</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="213" name="sortIndex">
+    <column id="264" parent="214" name="sortIndex">
       <Position>8</Position>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;100&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="213" name="path">
+    <column id="265" parent="214" name="path">
       <Position>9</Position>
       <Comment>路径</Comment>
       <DataType>varchar(100)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="213" name="totalCount">
+    <column id="266" parent="214" name="totalCount">
       <Position>10</Position>
       <Comment>商品数量</Comment>
       <DataType>int(20)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="213" name="seoTitle">
+    <column id="267" parent="214" name="seoTitle">
       <Position>11</Position>
       <Comment>分类标题（SEO）</Comment>
       <DataType>varchar(100)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="213" name="seoKeywords">
+    <column id="268" parent="214" name="seoKeywords">
       <Position>12</Position>
       <Comment>分类关键字（SEO）</Comment>
       <DataType>varchar(500)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="213" name="type_template_id">
+    <column id="269" parent="214" name="type_template_id">
       <Position>13</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="260" parent="213" name="PRIMARY">
+    <key id="270" parent="214" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="271" parent="215" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="272" parent="215" name="createTime">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="273" parent="215" name="updateTime">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="274" parent="215" name="productId">
+      <Position>4</Position>
+      <Comment>商品ID</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="275" parent="215" name="skuCode">
+      <Position>5</Position>
+      <Comment>SKU编码</Comment>
+      <DataType>varchar(100)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="276" parent="215" name="skuName">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="277" parent="215" name="marketPrice">
+      <Position>7</Position>
+      <Comment>市场价</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="278" parent="215" name="price">
+      <Position>8</Position>
+      <Comment>优惠价</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="279" parent="215" name="costPrice">
+      <Position>9</Position>
+      <Comment>成本价</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="280" parent="215" name="saleCount">
+      <Position>10</Position>
+      <Comment>销量</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="281" parent="215" name="sortIndex">
+      <Position>11</Position>
+      <Comment>排序</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="282" parent="215" name="availableStock">
+      <Position>12</Position>
+      <Comment>可用库存</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="283" parent="215" name="frozenStock">
+      <Position>13</Position>
+      <Comment>锁定库存</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="284" parent="215" name="skuProperties">
+      <Position>14</Position>
+      <Comment>SKU属性摘要</Comment>
+      <DataType>varchar(500)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="285" parent="215" name="skuMainPic">
+      <Position>15</Position>
+      <Comment>预览图</Comment>
+      <DataType>varchar(100)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="286" parent="215" name="indexs">
+      <Position>16</Position>
+      <DataType>varchar(100)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="287" parent="215" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="288" parent="216" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="289" parent="216" name="specName">
+      <Position>2</Position>
+      <Comment>规格名称</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="290" parent="216" name="product_type_id">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="291" parent="216" name="isSku">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="292" parent="216" name="product_type_id">
+      <ColNames>product_type_id</ColNames>
+    </index>
+    <key id="293" parent="216" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="294" parent="216" name="t_specification_ibfk_1">
+      <ColNames>product_type_id</ColNames>
+      <RefSchemaName>aigou-product</RefSchemaName>
+      <RefTableName>t_product_type</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="295" parent="217" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="296" parent="217" name="spec_id">
+      <Position>2</Position>
+      <Comment>规格ID</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="297" parent="217" name="optionName">
+      <Position>3</Position>
+      <Comment>选项名称</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="298" parent="217" name="index">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="299" parent="217" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

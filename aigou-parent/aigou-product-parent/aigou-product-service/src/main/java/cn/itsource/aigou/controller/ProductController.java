@@ -82,7 +82,6 @@ public class ProductController {
     @RequestMapping(value = "/json",method = RequestMethod.POST)
     public PageList<Product> json(@RequestBody ProductQuery query)
     {
-        IPage<Product> page = productService.page(new Page<Product>(query.getPageNum(),query.getPageSize()));
-        return new PageList<>(page.getTotal(),page.getRecords());
+        return productService.queryPage(query);
     }
 }
